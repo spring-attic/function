@@ -1,0 +1,8 @@
+= Spring Cloud Function versatile app
+
+Allows one to turn any plain jar containing a `Supplier`, `Function` or `Consumer`
+into a Spring Cloud Stream `Source`, `Processor` or `Sink` respectively.
+
+To learn more about this application and the supported properties, please
+review link:spring-cloud-starter-stream-app-function/README.adoc[this file].
+
