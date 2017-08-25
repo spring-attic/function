@@ -1,0 +1,56 @@
+//tag::ref-doc[]
+= Spring Cloud Function Bridge
+
+This application can be used to turn any plain jar containing a `Supplier`, `Function` or `Consumer`
+into a Spring Cloud Stream `Source`, `Processor` or `Sink` respectively.
+
+== Input
+
+Depends on the actual concrete type of the functional class used at runtime.
+
+== Output
+
+Depends on the actual concrete type of the functional class used at runtime.
+
+== Options
+
+The **$$function-app$$** application has the following options:
+
+$$function.location$$:: $$Location(s) of jar archives containing the supplier/function/consumer class to run.$$ *($$String[]$$, default: `$$[]$$`)*
+$$function.className$$:: $$The fully qualified class name of the supplier/function/consumer to run.$$ *($$String$$, default: `$$<none>$$`)*
+
+//end::ref-doc[]
+
+== Build
+
+```
+$ ./mvnw clean install -PgenerateApps
+$ cd apps
+
+You can find the corresponding binder based projects here. You can then cd into one one of the folders and build it:
+
+$ ./mvnw clean package
+```
+
+== Examples
+
+Assuming `length-counter.jar` contains the following class
+```
+package com.example.functions;
+
+import java.util.function.Function;
+
+public class LengthCounter implements Function<String, Integer> {
+
+	@Override
+	public Integer apply(String string) {
+		return string.length();
+	}
+}
+
+```
+
+Then you can turn it into a processor like so:
+```
+java -jar function-app.jar --function.location=file:length-counter.jar --function.className=com.example.functions.LengthCounter
+```
