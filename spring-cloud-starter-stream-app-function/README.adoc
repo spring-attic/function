@@ -16,8 +16,10 @@ Depends on the actual concrete type of the functional class used at runtime.
 
 The **$$function-app$$** application has the following options:
 
-$$function.location$$:: $$Location(s) of jar archives containing the supplier/function/consumer class to run.$$ *($$String[]$$, default: `$$[]$$`)*
-$$function.className$$:: $$The fully qualified class name of the supplier/function/consumer to run.$$ *($$String$$, default: `$$<none>$$`)*
+//tag::configuration-properties[]
+$$function.class-name$$:: $$The fully qualified class name of the supplier/function/consumer to run.$$ *($$String$$, default: `$$<none>$$`)*
+$$function.location$$:: $$Location(s) of jar archives containing the supplier/function/consumer class to run.$$ *($$String[]$$, default: `$$<none>$$`)*
+//end::configuration-properties[]
 
 //end::ref-doc[]
 

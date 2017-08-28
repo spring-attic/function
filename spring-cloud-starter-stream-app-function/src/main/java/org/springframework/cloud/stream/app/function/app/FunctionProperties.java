@@ -16,6 +16,10 @@
 
 package org.springframework.cloud.stream.app.function.app;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.Size;
+
 /**
  * Configuration properties for deciding how to locate the functional class to execute.
  *
@@ -23,29 +27,31 @@ package org.springframework.cloud.stream.app.function.app;
  */
 public class FunctionProperties {
 
-    /**
-     * Location(s) of jar archives containing the supplier/function/consumer class to run.
-     */
-    private String[] location;
+	/**
+	 * Location(s) of jar archives containing the supplier/function/consumer class to run.
+	 */
+	@Size(min = 1)
+	private String[] location;
 
-    /**
-     * The fully qualified class name of the supplier/function/consumer to run.
-     */
-    private String className;
+	/**
+	 * The fully qualified class name of the supplier/function/consumer to run.
+	 */
+	@NotBlank
+	private String className;
 
-    public String getClassName() {
-        return className;
-    }
+	public String getClassName() {
+		return className;
+	}
 
-    public void setClassName(String className) {
-        this.className = className;
-    }
+	public void setClassName(String className) {
+		this.className = className;
+	}
 
-    public String[] getLocation() {
-        return location;
-    }
+	public String[] getLocation() {
+		return location;
+	}
 
-    public void setLocation(String[] location) {
-        this.location = location;
-    }
+	public void setLocation(String[] location) {
+		this.location = location;
+	}
 }
