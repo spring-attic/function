@@ -16,9 +16,9 @@
 
 package org.springframework.cloud.stream.app.function.app;
 
-import org.hibernate.validator.constraints.NotBlank;
-
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  * Configuration properties for deciding how to locate the functional class to execute.
