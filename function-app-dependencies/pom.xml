@@ -17,7 +17,7 @@
 
 	<properties>
 		<reactor.version>3.0.7.RELEASE</reactor.version>
-		<spring.cloud.function.version>1.0.0.BUILD-SNAPSHOT</spring.cloud.function.version>
+		<spring.cloud.function.version>1.0.0.M1</spring.cloud.function.version>
 		<spring.cloud.deployer.version>1.2.0.RELEASE</spring.cloud.deployer.version>
 	</properties>
 
