@@ -77,7 +77,7 @@ public abstract class FunctionAppConfigurationTests {
         public void test() throws Exception {
             processor.input().send(MessageBuilder.withPayload("hello").build());
             Message<?> received = messageCollector.forChannel(processor.output()).poll(1, TimeUnit.SECONDS);
-            assertThat(received.getPayload(), Matchers.is("hello".length()));
+            assertThat(Integer.valueOf(received.getPayload().toString()), Matchers.is("hello".length()));
 
         }
 
